@@ -43,9 +43,12 @@ export default function InputSection({ onResultChange }: InputSectionProps) {
       <div className="flex gap-2 sm:gap-3 mt-3 sm:mt-4">
         <button
           onClick={handleConvert}
-          className="flex-1 bg-blue-600 text-white py-2 sm:py-3 rounded-xl font-medium text-sm sm:text-base
-                   hover:bg-blue-700 active:bg-blue-800 transform hover:scale-[1.02]
-                   transition-all duration-200 shadow-sm"
+          disabled={!input.trim()}
+          className={`flex-1 text-white py-2 sm:py-3 rounded-xl font-medium text-sm sm:text-base
+                   transform hover:scale-[1.02] transition-all duration-200 shadow-sm
+                   ${!input.trim() 
+                     ? 'bg-gray-400 cursor-not-allowed' 
+                     : 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800'}`}
         >
           Convert
         </button>
