@@ -12,3 +12,7 @@ export interface InputSectionProps {
   onResultChange: (result: number | null, input: string) => void;
 }
 
+export interface CalculationStepsProps {
+  input: string;
+  result: number | null;
+} 
